@@ -30,3 +30,10 @@ if __name__=='__main__':
     for filho in natalia.filhos:
         print(filho.nome)
         print(filho.idade)
+
+    #Atributos dinâmicos
+    natalia.sobrenome = 'Costa'
+    del natalia.filhos #Possivel deletar atibutos dinamicamente
+    print(natalia.__dict__)
+    print(joao.__dict__)
+
