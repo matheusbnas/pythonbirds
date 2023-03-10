@@ -1,5 +1,7 @@
 class Pessoa: 
-    def __init__(self, *filhos, nome, idade = 28): #Excutado quando constrói o objeto
+    olhos = 2
+
+    def __init__(self, *filhos, nome= None, idade = 28): #Excutado quando constrói o objeto
         self.nome = nome
         self.idade = idade #tributo de uma instância(objeto)
         self.filhos = list(filhos) #atributo filhos que é uma lista
@@ -32,8 +34,15 @@ if __name__=='__main__':
         print(filho.idade)
 
     #Atributos dinâmicos
+    joao.olhos = 1
     natalia.sobrenome = 'Costa'
     del natalia.filhos #Possivel deletar atibutos dinamicamente
     print(natalia.__dict__)
     print(joao.__dict__)
 
+    #Atributos de Classe
+    Pessoa.olhos = 4
+    print(Pessoa.olhos)
+    print(natalia.olhos)
+    print(joao.olhos)
+    print(id(Pessoa.olhos), id(natalia.olhos), id(joao.olhos))
